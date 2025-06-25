@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>    <meta charset="UTF-8">
+    <title>Lịch Chiếu Phim Beta Cinema Thanh Xuân 27/06/2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            justify-items: center;
+        }
+        .movie-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            gap: 25px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .movie-poster {
+            width: 160px;
+            height: 240px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .movie-poster:hover {
+            transform: scale(1.05);
+        }        .movie-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .movie-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .movie-detail {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .movie-detail b {
+            color: #1a237e;
+            font-weight: 600;
+        }
+        .movie-desc {
+            font-size: 0.93rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.6;
+            text-align: justify;
+            padding: 12px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .showtimes {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #0d47a1;
+            font-weight: 600;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+            box-shadow: 0 2px 8px rgba(13, 71, 161, 0.1);
+        }
+        .showtimes span {
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .showtimes span:hover {
+            background: #0d47a1;
+            color: white;
+            transform: translateY(-1px);
+        }
+        .movie-rating {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+            border-left: 5px solid #4caf50;
+            border-radius: 12px;
+            padding: 15px 18px;
+            margin-top: 15px;
+            font-size: 0.93rem;
+            color: #2e7d32;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+        }
+        .rating-title {
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .rating-score {
+            font-weight: 700;
+            color: #ff6f00;
+            margin-top: 12px;
+            font-size: 1.05rem;
+            padding: 8px 12px;
+            background: rgba(255, 111, 0, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+        }        @media (max-width: 1200px) {
+            .movie-list {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .movie-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+            .movie-poster {
+                width: 200px;
+                height: 300px;
+                margin-bottom: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .container {
+                margin: 10px;
+                padding: 20px 15px;
+            }
+            .movie-desc {
+                text-align: left;
+            }
+        }
+        @media (max-width: 480px) {
+            .movie-poster {
+                width: 160px;
+                height: 240px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .showtimes {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lịch Chiếu Phim Beta Cinema Thanh Xuân<br>Ngày 27/06/2025</h1>
+        <div class="movie-list">
+            <!-- Movie 1 -->
+            <div class="movie-card">
+                <img class="movie-poster" src="https://files.betacorp.vn/media%2fimages%2f2025%2f06%2f03%2f400x633%2D180011%2D030625%2D92.jpg" alt="28 Năm Sau: Hậu Tận Thế Poster">
+                <div class="movie-info">
+                    <div class="movie-title">28 Năm Sau: Hậu Tận Thế</div>
+                    <div class="movie-desc">
+                        28 năm sau đại dịch virus khiến nước Anh sụp đổ, giữa thế giới bị phong tỏa nghiêm ngặt, một nhóm người sống sót ẩn mình trên đảo. Jamie cùng con trai rời đảo để khám phá đất liền, đối mặt với sự thật rùng rợn: thế giới đã thay đổi – không chỉ ở kẻ biến thành thây ma mà cả những người còn sống sót.
+                    </div>
+                    <div class="movie-detail"><b>Đạo diễn:</b> Danny Boyle</div>
+                    <div class="movie-detail"><b>Diễn viên:</b> Aaron Taylor-Johnson, Ralph Fiennes, Jodie Comer,...</div>
+                    <div class="movie-detail"><b>Thể loại:</b> Kinh dị</div>
+                    <div class="movie-detail"><b>Thời lượng:</b> 114 phút</div>
+                    <div class="movie-detail"><b>Ngôn ngữ:</b> Tiếng Anh</div>
+                    <div class="movie-detail"><b>Khởi chiếu:</b> 20/06/2025</div>
+                    <div class="showtimes">
+                        <span>11:15</span>
+                        <span>15:15</span>
+                        <span>19:30</span>
+                    </div>                    <div class="movie-rating">
+                        <div class="rating-title">Đánh giá phim (Tổng hợp)</div>
+                        Được đánh giá cao về nhịp phim, bầu không khí căng thẳng, hình ảnh ấn tượng. Diễn xuất của Aaron Taylor-Johnson và dàn cast được khen ngợi.<br><br>
+                        Một số ý kiến cho rằng phim vẫn giữ chất kinh dị đặc trưng của dòng phim "28 Days Later", nhưng chưa thực sự tạo đột phá mới về nội dung.
+                        <div class="rating-score">Điểm IMDb dự kiến: 7.5/10 (dựa trên các phần trước và kỳ vọng từ cộng đồng quốc tế)</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Movie 2 -->
+            <div class="movie-card">
+                <img class="movie-poster" src="https://files.betacorp.vn/media%2fimages%2f2025%2f06%2f23%2f400wx633h%2D101906%2D230625%2D35.jpg" alt="Mượn Rượu Đẩy Kèo Poster">
+                <div class="movie-info">
+                    <div class="movie-title">Mượn Rượu Đẩy Kèo</div>
+                    <div class="movie-desc">
+                        In-beom tiếp cận giám đốc tài chính Pyo Jong-rok, người gắn bó cả đời để gìn giữ tinh thần Gukbo. Nhưng In-beom phát hiện mình bị lợi dụng và phản bội. Anh chấp nhận vào tù để đổi lấy phán quyết bảo vệ Gukbo, nhưng công ty vẫn bị bán ra nước ngoài. Cuối cùng, Jong-rok rời công ty và sáng lập hãng rượu soju địa phương giữ lại linh hồn văn hóa cho người dân.
+                    </div>
+                    <div class="movie-detail"><b>Đạo diễn:</b> Choi Yoon-jin</div>
+                    <div class="movie-detail"><b>Diễn viên:</b> Yoo Hai-jin, Lee Je-hoon, Son Hyun-joo, Choi Young-jun, Byron Mann</div>
+                    <div class="movie-detail"><b>Thể loại:</b> Tâm lý, Hồi hộp</div>
+                    <div class="movie-detail"><b>Thời lượng:</b> 104 phút</div>
+                    <div class="movie-detail"><b>Ngôn ngữ:</b> Tiếng Việt</div>
+                    <div class="movie-detail"><b>Khởi chiếu:</b> 27/06/2025</div>
+                    <div class="showtimes">
+                        <span>00:20</span>
+                        <span>12:00</span>
+                        <span>14:00</span>
+                        <span>16:15</span>
+                        <span>18:15</span>
+                        <span>20:30</span>
+                        <span>22:45</span>
+                    </div>                    <div class="movie-rating">
+                        <div class="rating-title">Đánh giá phim (Tổng hợp)</div>
+                        Phim tâm lý - hồi hộp Hàn Quốc, được đánh giá cao về kịch bản, diễn xuất tự nhiên, thông điệp nhân văn sâu sắc.<br><br>
+                        Được khán giả Hàn Quốc nhận xét là bộ phim đáng xem, phản ánh đúng thực tế xã hội, đặc biệt phù hợp với người yêu thích phim tâm lý xã hội.
+                        <div class="rating-score">Điểm đánh giá dự kiến trên các diễn đàn Hàn Quốc: 8/10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
